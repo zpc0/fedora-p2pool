@@ -11,6 +11,7 @@ Source0:	https://github.com/SChernykh/%{name}/releases/download/v%{version}/%{na
 
 BuildRequires:	cmake
 BuildRequires:	gcc
+BuildRequires:	gcc-c++
 BuildRequires:	libcurl-devel
 BuildRequires:	libsodium-devel
 BuildRequires:	libuv-devel

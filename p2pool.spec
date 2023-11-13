@@ -14,6 +14,7 @@ BuildRequires:	gcc
 BuildRequires:	gcc-c++
 BuildRequires:	libcurl-devel
 BuildRequires:	libsodium-devel
+BuildRequires:	libstdc++-static
 BuildRequires:	libuv-devel
 BuildRequires:	openpgm-devel
 BuildRequires:	zeromq-devel

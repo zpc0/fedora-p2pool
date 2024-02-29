@@ -2,7 +2,7 @@
 
 Name:		p2pool
 Version:	3.10
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Decentralized pool for Monero mining
 
 License:	GPLv3
@@ -41,6 +41,8 @@ install -m 0755 build/p2pool %{buildroot}%{_bindir}/p2pool
 %{_bindir}/p2pool
 
 %changelog
+* Thu Feb 29 2024 zpc <dev@zpc.st>
+- rebuild
 * Fri Jan 05 2024 zpc <dev@zpc.st>
 - version 3.10
 * Mon Nov 27 2023 zpc <dev@zpc.st>

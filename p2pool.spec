@@ -5,7 +5,7 @@ Version:	3.10
 Release:	2%{?dist}
 Summary:	Decentralized pool for Monero mining
 
-License:	GPLv3
+License:	GPL-3.0-only
 URL:		https://p2pool.io
 Source0:	https://github.com/SChernykh/%{name}/releases/download/v%{version}/%{name}_source.tar.xz
 

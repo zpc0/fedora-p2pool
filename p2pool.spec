@@ -1,5 +1,8 @@
 %global debug_package %{nil}
 
+# disable LTO to fix build problem
+%global _lto_cflags %{nil}
+
 Name:		p2pool
 Version:	4.0
 Release:	1%{?dist}

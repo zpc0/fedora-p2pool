@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 %global debug_package %{nil}
 
 # disable LTO to fix build problem

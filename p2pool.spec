@@ -15,6 +15,10 @@ Source0:	https://github.com/SChernykh/%{name}/releases/download/v%{version}/%{na
 Source1:	https://github.com/SChernykh/%{name}/releases/download/v%{version}/sha256sums.txt.asc
 Source2:	SChernykh.asc
 
+# for source tarball verification
+BuildRequires:	coreutils
+BuildRequires:	gnupg2
+
 BuildRequires:	cmake
 BuildRequires:	gcc
 BuildRequires:	gcc-c++

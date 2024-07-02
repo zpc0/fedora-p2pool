@@ -39,7 +39,7 @@ gpg --output SChernykh-keyring.gpg --export sergey.v.chernykh@gmail.com
 gpgv --keyring ./SChernykh-keyring.gpg %{SOURCE1}
 
 # calc hashes
-trusted_hash=$(grep -Pzo 'p2pool_source.tar.xz\n.*\n.*' %{SOURCE1} | tail -c 65 | head -c 64)
+trusted_hash=$(grep SHA256 %{SOURCE1} | tail -c 65 | head -c 64)
 archive_hash=$(sha256sum %{SOURCE0} | head -c 64)
 
 # check against correct hash

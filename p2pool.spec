@@ -11,6 +11,8 @@ Summary:	Decentralized pool for Monero mining
 License:	GPL-3.0-only
 URL:		https://p2pool.io
 Source0:	https://github.com/SChernykh/%{name}/releases/download/v%{version}/%{name}_source.tar.xz
+Source1:	https://github.com/SChernykh/%{name}/releases/download/v%{version}/sha256sums.txt.asc
+Source2:	SChernykh.asc
 
 BuildRequires:	cmake
 BuildRequires:	gcc
@@ -26,6 +28,20 @@ BuildRequires:	zeromq-devel
 Decentralized pool for Monero mining
 
 %prep
+# check PGP signature
+gpg --import %{SOURCE2}
+gpg --output SChernykh-keyring.gpg --export sergey.v.chernykh@gmail.com
+gpgv --keyring ./SChernykh-keyring.gpg %{SOURCE1}
+
+# calc hashes
+trusted_hash=$(grep -Pzo 'p2pool_source.tar.xz\n.*\n.*' %{SOURCE1} | tail -c 65 | head -c 64)
+archive_hash=$(sha256sum %{SOURCE0} | head -c 64)
+
+# check against correct hash
+if ! [ $trusted_hash = $archive_hash ]; then
+	exit 1
+fi
+
 %autosetup -n %{name}
 %{set_build_flags}
 mkdir build && cd build

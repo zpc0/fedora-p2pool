@@ -38,6 +38,15 @@ gpg --import %{SOURCE2}
 gpg --output SChernykh-keyring.gpg --export sergey.v.chernykh@gmail.com
 gpgv --keyring ./SChernykh-keyring.gpg %{SOURCE1}
 
+# calc hashes
+trusted_hash=$(sed -n '/Name:\sp2pool_source.tar.xz/,/SHA256:\s/p' %{SOURCE1} | tail -c 65 | head -c 64)
+archive_hash=$(sha256sum %{SOURCE0} | head -c 64)
+
+# check against correct hash
+if ! [ $trusted_hash = $archive_hash ]; then
+	exit 1
+fi
+
 %autosetup -n %{name}
 %{set_build_flags}
 mkdir build && cd build

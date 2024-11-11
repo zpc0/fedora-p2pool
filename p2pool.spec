@@ -5,7 +5,7 @@
 %global _lto_cflags %{nil}
 
 Name:		p2pool
-Version:	4.1.1
+Version:	4.2
 Release:	1%{?dist}
 Summary:	Decentralized pool for Monero mining
 

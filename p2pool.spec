@@ -1,11 +1,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-
-# disable LTO to fix build problem
-%global _lto_cflags %{nil}
-
 Name:		p2pool
 Version:	4.3
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Decentralized pool for Monero mining
 
 License:	GPL-3.0-only
@@ -50,7 +46,7 @@ fi
 %autosetup -n %{name}
 
 %build
-%cmake -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo
+%cmake -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo -DWITH_RANDOMX=OFF -DWITH_UPNP=OFF -DWITH_GRPC=OFF -DWITH_TLS=OFF
 %cmake_build
 
 %install

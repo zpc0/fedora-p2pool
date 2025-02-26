@@ -48,17 +48,13 @@ if ! [ $trusted_hash = $archive_hash ]; then
 fi
 
 %autosetup -n %{name}
-%{set_build_flags}
-mkdir build && cd build
-cmake ..
 
 %build
-cd build
-%make_build
+%cmake
+%cmake_build
 
 %install
-mkdir -p %{buildroot}%{_bindir}
-install -m 0755 build/p2pool %{buildroot}%{_bindir}/p2pool
+%cmake_install
 
 %files
 %license LICENSE

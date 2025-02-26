@@ -20,6 +20,7 @@ BuildRequires:	coreutils
 BuildRequires:	gnupg2
 
 BuildRequires:	cmake
+BuildRequires:	ninja-build
 BuildRequires:	gcc
 BuildRequires:	gcc-c++
 BuildRequires:	libcurl-devel
@@ -50,7 +51,7 @@ fi
 %autosetup -n %{name}
 
 %build
-%cmake
+%cmake -G Ninja
 %cmake_build
 
 %install

@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 Name:		p2pool
 Version:	4.3
-Release:	3%{?dist}
+Release:	4%{?dist}
 Summary:	Decentralized pool for Monero mining
 
 License:	GPL-3.0-only
@@ -46,7 +46,7 @@ fi
 %autosetup -n %{name}
 
 %build
-%cmake -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo -DWITH_RANDOMX=OFF -DWITH_UPNP=OFF -DWITH_GRPC=OFF -DWITH_TLS=OFF
+%cmake -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo -DWITH_RANDOMX=OFF -DWITH_UPNP=OFF -DWITH_GRPC=OFF -DWITH_TLS=OFF -DOPTIMIZATION_FLAGS=""
 %cmake_build
 
 %install

@@ -18,7 +18,6 @@ BuildRequires:	gnupg2
 
 BuildRequires:	cmake
 BuildRequires:	ninja-build
-BuildRequires:	gcc
 BuildRequires:	gcc-c++
 BuildRequires:	libcurl-devel
 BuildRequires:	libsodium-devel

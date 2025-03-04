@@ -1,4 +1,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
+%global debug_package %{nil}
+
 Name:		p2pool
 Version:	4.3
 Release:	4%{?dist}
@@ -46,7 +48,7 @@ fi
 %autosetup -n %{name}
 
 %build
-%cmake -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo -DWITH_RANDOMX=OFF -DWITH_UPNP=OFF -DWITH_GRPC=OFF -DWITH_TLS=OFF -DOPTIMIZATION_FLAGS=""
+%cmake -G Ninja -DWITH_RANDOMX=OFF -DWITH_UPNP=OFF -DWITH_GRPC=OFF -DWITH_TLS=OFF
 %cmake_build
 
 %install

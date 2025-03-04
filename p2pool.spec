@@ -31,8 +31,7 @@ Decentralized pool for Monero mining
 
 %prep
 # check PGP signature
-gpg --import %{SOURCE2}
-gpg --output SChernykh-keyring.gpg --export sergey.v.chernykh@gmail.com
+gpg --dearmor --output SChernykh-keyring.gpg %{SOURCE2}
 gpgv --keyring ./SChernykh-keyring.gpg %{SOURCE1}
 
 # calc hashes

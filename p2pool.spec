@@ -3,7 +3,7 @@
 
 Name:		p2pool
 Version:	4.4
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Decentralized pool for Monero mining
 
 License:	GPL-3.0-only
@@ -46,7 +46,7 @@ fi
 %autosetup -n %{name}
 
 %build
-%cmake -G Ninja -DWITH_RANDOMX=OFF -DWITH_UPNP=OFF -DWITH_GRPC=OFF -DWITH_TLS=OFF
+%cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DWITH_UPNP=OFF -DWITH_GRPC=OFF -DWITH_TLS=OFF
 %cmake_build
 
 %install

@@ -2,7 +2,7 @@
 %global debug_package %{nil}
 
 Name:		p2pool
-Version:	4.7
+Version:	4.8
 Release:	1%{?dist}
 Summary:	Decentralized pool for Monero mining
 

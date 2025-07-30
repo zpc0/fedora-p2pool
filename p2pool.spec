@@ -3,12 +3,12 @@
 
 Name:		p2pool
 Version:	4.9
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Decentralized pool for Monero mining
 
 License:	GPL-3.0-only
 URL:		https://p2pool.io
-Source0:	https://github.com/SChernykh/%{name}/releases/download/v%{version}/%{name}_source.tar.xz
+Source0:	https://github.com/SChernykh/%{name}/releases/download/v%{version}/%{name}_source-v%{version}.tar.xz
 Source1:	https://github.com/SChernykh/%{name}/releases/download/v%{version}/sha256sums.txt.asc
 Source2:	SChernykh.asc
 
@@ -35,7 +35,7 @@ gpg --dearmor --output SChernykh-keyring.gpg %{SOURCE2}
 gpgv --keyring ./SChernykh-keyring.gpg %{SOURCE1}
 
 # calc hashes
-trusted_hash=$(sed -n '/Name:\sp2pool_source.tar.xz/,/SHA256:\s/p' %{SOURCE1} | tail -c 65 | head -c 64)
+trusted_hash=$(sed -n '/Name:\sp2pool_source-v%{version}.tar.xz/,/SHA256:\s/p' %{SOURCE1} | tail -c 65 | head -c 64)
 archive_hash=$(sha256sum %{SOURCE0} | head -c 64)
 
 # check against correct hash

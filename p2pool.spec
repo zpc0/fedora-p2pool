@@ -3,7 +3,7 @@
 
 Name:		p2pool
 Version:	4.9
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Decentralized pool for Monero mining
 
 License:	GPL-3.0-only
@@ -20,10 +20,8 @@ BuildRequires:	cmake
 BuildRequires:	ninja-build
 BuildRequires:	gcc-c++
 BuildRequires:	libcurl-devel
-BuildRequires:	libsodium-devel
 BuildRequires:	libstdc++-static
 BuildRequires:	libuv-devel
-BuildRequires:	openpgm-devel
 BuildRequires:	zeromq-devel
 
 %description

@@ -2,8 +2,8 @@
 %global debug_package %{nil}
 
 Name:		p2pool
-Version:	4.9
-Release:	3%{?dist}
+Version:	4.9.1
+Release:	1%{?dist}
 Summary:	Decentralized pool for Monero mining
 
 License:	GPL-3.0-only
